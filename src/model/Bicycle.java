@@ -1,11 +1,13 @@
 package model;
 
-public class Bicycle {
+public class Bicycle extends Transport {
+    public Bicycle(String modelName, int wheelsCount) {
+        super(modelName, wheelsCount);
+    }
 
-    public String modelName;
-    public int wheelsCount;
-
-    public void updateTyre() {
-        System.out.println("Меняем покрышку");
+    @Override
+    public void service() {
+        updateTyre();
+        System.out.println();
     }
 }
