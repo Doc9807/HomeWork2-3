@@ -1,15 +1,19 @@
 package model;
 
-public class Car {
+public class Car extends Transport {
+    public Car(String modelName) {
+        super(modelName, 4);
+    }
+    // Тут специально убрано "int wheelsCount" потому что я согласен с логикой лектора, машина всегда имеет 4 колеса,
+    // ну как минимум в 90% случаев.
 
-    public String modelName;
-    public int wheelsCount;
-
-    public void updateTyre() {
-        System.out.println("Меняем покрышку");
+    private void checkEngine() {
+        System.out.println("Проверяем двигатель\n");
     }
 
-    public void checkEngine() {
-        System.out.println("Проверяем двигатель");
+    @Override
+    public void service() {
+        updateTyre();
+        checkEngine();
     }
 }
